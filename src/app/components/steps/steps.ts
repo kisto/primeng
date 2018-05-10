@@ -18,6 +18,7 @@ import {RouterModule} from '@angular/router';
                     <a *ngIf="item.routerLink" [routerLink]="item.routerLink" [queryParams]="item.queryParams" [routerLinkActive]="'ui-state-active'" [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" class="ui-menuitem-link" (click)="itemClick($event, item, i)" [attr.target]="item.target" [attr.id]="item.id">
                         <span class="ui-steps-number">{{i + 1}}</span>
                         <span class="ui-steps-title">{{item.label}}</span>
+                        <span *ngIf="item.status" class="ui-steps-status">{{item.status}}</span>
                     </a>
                 </li>
             </ul>
@@ -25,32 +26,32 @@ import {RouterModule} from '@angular/router';
     `
 })
 export class Steps {
-    
+
     @Input() activeIndex: number = 0;
-    
+
     @Input() model: MenuItem[];
-    
+
     @Input() readonly: boolean =  true;
-    
+
     @Input() style: any;
-        
+
     @Input() styleClass: string;
-    
+
     @Output() activeIndexChange: EventEmitter<any> = new EventEmitter();
-    
+
     itemClick(event: Event, item: MenuItem, i: number) {
         if(this.readonly || item.disabled) {
             event.preventDefault();
             return;
         }
-        
+
         this.activeIndexChange.emit(i);
-                
+
         if(!item.url) {
             event.preventDefault();
         }
-        
-        if(item.command) {            
+
+        if(item.command) {
             item.command({
                 originalEvent: event,
                 item: item,
@@ -58,7 +59,7 @@ export class Steps {
             });
         }
     }
-    
+
 }
 
 @NgModule({
