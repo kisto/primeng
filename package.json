@@ -20,19 +20,18 @@
     "url": "git+https://github.com/primefaces/primeng.git"
   },
   "devDependencies": {
-    "node-sass": "^4.5.3",
     "@angular/animations": "^5.0.0",
+    "@angular/cli": "^1.7.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.2.10",
     "@angular/core": "^5.0.0",
     "@angular/forms": "^5.0.0",
     "@angular/http": "^5.0.0",
+    "@angular/language-service": "^5.0.0",
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
-    "@angular/cli": "^1.7.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/language-service": "^5.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
@@ -60,6 +59,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "moment": "2.18.1",
+    "node-sass": "^4.5.3",
     "prismjs": "1.6.0",
     "protractor": "~5.1.2",
     "quill": "1.1.8",
@@ -76,8 +76,5 @@
   },
   "homepage": "https://github.com/primefaces/primeng#readme",
   "main": "primeng.js",
-  "dependencies": {
-    "ngc": "^1.0.0"
-  },
   "author": ""
 }
